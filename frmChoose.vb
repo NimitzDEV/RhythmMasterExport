@@ -59,6 +59,7 @@
     End Sub
 
     Private Sub playMusic()
+        TrackBar1.Value = 0
         checker.Enabled = False
         songPath = songListArray(currentId, 2)
         player.controls.stop()
@@ -100,22 +101,49 @@
 
     Private Sub checker_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles checker.Tick
         On Error Resume Next
-        If player.controls.currentPositionString = "" Then
-            Label1.Text = "双击播放歌曲"
-            Label2.Text = "歌曲名"
-            Label3.Text = "艺术家"
-            Label4.Text = "作曲家"
-            TrackBar1.Enabled = False
-            pbSmall.Image = My.Resources.initTitle
-            artPic.Image = My.Resources.initBig
-            currentId = -1
-            checker.Enabled = False
-        Else
-            TrackBar1.Enabled = True
-            TrackBar1.Maximum = Split(player.currentMedia.durationString, ":")(0) * 60 + Split(player.currentMedia.durationString, ":")(1)
-            TrackBar1.Value = Split(player.controls.currentPositionString, ":")(0) * 60 + Split(player.controls.currentPositionString, ":")(1)
-            Label1.Text = "正在播放 " & player.controls.currentPositionString & " / " & player.currentMedia.durationString
+        If CheckBox1.Checked Then
+            If TrackBar1.Value = TrackBar1.Maximum Then
+                If RadioButton1.Checked Then
+                    If currentId <> counts Then
+                        currentId += 1
+                        playMusic()
+                        Exit Sub
+                    End If
+                End If
+                If RadioButton2.Checked Then
+                    playMusic()
+                    Exit Sub
+                End If
+                If RadioButton3.Checked Then
+                    If currentId <> counts Then
+                        currentId += 1
+                        playMusic()
+                        Exit Sub
+                    End If
+                    If currentId = counts Then
+                        currentId = 0
+                        playMusic()
+                        Exit Sub
+                    End If
+                End If
+            End If
         End If
+                If player.controls.currentPositionString = "" Then
+                    Label1.Text = "双击播放歌曲"
+                    Label2.Text = "歌曲名"
+                    Label3.Text = "艺术家"
+                    Label4.Text = "作曲家"
+                    TrackBar1.Enabled = False
+                    pbSmall.Image = My.Resources.initTitle
+                    artPic.Image = My.Resources.initBig
+                    currentId = -1
+                    checker.Enabled = False
+                Else
+                    TrackBar1.Enabled = True
+                    TrackBar1.Maximum = Split(player.currentMedia.durationString, ":")(0) * 60 + Split(player.currentMedia.durationString, ":")(1) - 1
+                    TrackBar1.Value = Split(player.controls.currentPositionString, ":")(0) * 60 + Split(player.controls.currentPositionString, ":")(1)
+                    Label1.Text = "正在播放 " & player.controls.currentPositionString & " / " & player.currentMedia.durationString
+                End If
     End Sub
 
     Private Sub TrackBar1_Scroll(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TrackBar1.Scroll
@@ -145,5 +173,13 @@
 
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
         frmAbout.Show()
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked Then
+            GroupBox2.Enabled = True
+        Else
+            GroupBox2.Enabled = False
+        End If
     End Sub
 End Class

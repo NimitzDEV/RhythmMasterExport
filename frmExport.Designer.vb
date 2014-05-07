@@ -22,7 +22,6 @@ Partial Class frmExport
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.artPic = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -36,16 +35,9 @@ Partial Class frmExport
         Me.tbSavePath = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.fbdSel = New System.Windows.Forms.FolderBrowserDialog()
+        Me.artPic = New System.Windows.Forms.PictureBox()
         CType(Me.artPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'artPic
-        '
-        Me.artPic.Location = New System.Drawing.Point(12, 11)
-        Me.artPic.Name = "artPic"
-        Me.artPic.Size = New System.Drawing.Size(483, 320)
-        Me.artPic.TabIndex = 2
-        Me.artPic.TabStop = False
         '
         'Label1
         '
@@ -77,7 +69,7 @@ Partial Class frmExport
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(210, 341)
+        Me.Label4.Location = New System.Drawing.Point(245, 341)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(53, 12)
         Me.Label4.TabIndex = 6
@@ -104,7 +96,7 @@ Partial Class frmExport
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(269, 340)
+        Me.CheckBox1.Location = New System.Drawing.Point(304, 340)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(96, 16)
         Me.CheckBox1.TabIndex = 9
@@ -115,21 +107,21 @@ Partial Class frmExport
         '
         Me.tbSongName.Location = New System.Drawing.Point(59, 338)
         Me.tbSongName.Name = "tbSongName"
-        Me.tbSongName.Size = New System.Drawing.Size(100, 21)
+        Me.tbSongName.Size = New System.Drawing.Size(145, 21)
         Me.tbSongName.TabIndex = 10
         '
         'tbAritist
         '
         Me.tbAritist.Location = New System.Drawing.Point(59, 374)
         Me.tbAritist.Name = "tbAritist"
-        Me.tbAritist.Size = New System.Drawing.Size(100, 21)
+        Me.tbAritist.Size = New System.Drawing.Size(145, 21)
         Me.tbAritist.TabIndex = 11
         '
         'tbComposer
         '
         Me.tbComposer.Location = New System.Drawing.Point(59, 409)
         Me.tbComposer.Name = "tbComposer"
-        Me.tbComposer.Size = New System.Drawing.Size(100, 21)
+        Me.tbComposer.Size = New System.Drawing.Size(145, 21)
         Me.tbComposer.TabIndex = 12
         '
         'tbSavePath
@@ -151,6 +143,14 @@ Partial Class frmExport
         'fbdSel
         '
         Me.fbdSel.Description = "请选择歌曲保存的文件夹，歌曲名字将会自动生成"
+        '
+        'artPic
+        '
+        Me.artPic.Location = New System.Drawing.Point(12, 11)
+        Me.artPic.Name = "artPic"
+        Me.artPic.Size = New System.Drawing.Size(483, 320)
+        Me.artPic.TabIndex = 2
+        Me.artPic.TabStop = False
         '
         'frmExport
         '

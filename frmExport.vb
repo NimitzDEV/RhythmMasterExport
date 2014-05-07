@@ -18,6 +18,7 @@
             CheckBox1.Checked = False
         Else
             artPic.Image = Image.FromFile(picPath)
+            CheckBox1.Enabled = True
         End If
         tbSongName.Text = songListArray(currentId, 1)
         tbAritist.Text = songListArray(currentId, 3)
