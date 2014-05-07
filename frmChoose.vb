@@ -138,4 +138,8 @@
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         player.controls.stop()
     End Sub
+
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
+        frmAbout.Show()
+    End Sub
 End Class

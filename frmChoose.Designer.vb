@@ -53,6 +53,7 @@ Partial Class frmChoose
         Me.Button4 = New System.Windows.Forms.Button()
         Me.pbSmall = New System.Windows.Forms.PictureBox()
         Me.artPic = New System.Windows.Forms.PictureBox()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbSmall, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -152,6 +153,7 @@ Partial Class frmChoose
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button5)
         Me.GroupBox1.Controls.Add(Me.Button4)
         Me.GroupBox1.Controls.Add(Me.Button3)
         Me.GroupBox1.Controls.Add(Me.Button2)
@@ -271,6 +273,15 @@ Partial Class frmChoose
         Me.artPic.TabIndex = 1
         Me.artPic.TabStop = False
         '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(17, 291)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.TabIndex = 10
+        Me.Button5.Text = "关于"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
         'frmChoose
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -320,4 +331,5 @@ Partial Class frmChoose
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button5 As System.Windows.Forms.Button
 End Class
