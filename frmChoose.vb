@@ -54,16 +54,20 @@
 
     Private Sub ListView1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles ListView1.DoubleClick
         currentId = ListView1.SelectedIndices(0)
+        Debug.Print(currentId)
         playMusic()
     End Sub
 
     Private Sub playMusic()
+        checker.Enabled = False
         songPath = songListArray(currentId, 2)
+        player.controls.stop()
+        player.URL = (finalTargetPath & "\" & songPath & "\" & songPath & ".mp3")
+        player.controls.play()
         If Dir(finalTargetPath & "\" & songPath & "\" & songPath & ".mp3") = "" Then
             MsgBox("该歌曲没有下载")
             Exit Sub
         End If
-        player.controls.stop()
         If Dir(finalTargetPath & "\" & songPath & "\" & songPath & ".png") <> "" Then
             artPic.Image = Image.FromFile(finalTargetPath & "\" & songPath & "\" & songPath & ".png")
         Else
@@ -74,8 +78,10 @@
         Else
             pbSmall.Image = My.Resources.notitle
         End If
-        player.URL = (finalTargetPath & "\" & songPath & "\" & songPath & ".mp3")
-        player.controls.play()
+        Label2.Text = songListArray(currentId, 1)
+        Label3.Text = songListArray(currentId, 3)
+        Label4.Text = songListArray(currentId, 4)
+        checker.Enabled = True
     End Sub
 
     Private Sub frmChoose_Resize(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Resize
@@ -103,14 +109,12 @@
             pbSmall.Image = My.Resources.initTitle
             artPic.Image = My.Resources.initBig
             currentId = -1
+            checker.Enabled = False
         Else
             TrackBar1.Enabled = True
             TrackBar1.Maximum = Split(player.currentMedia.durationString, ":")(0) * 60 + Split(player.currentMedia.durationString, ":")(1)
             TrackBar1.Value = Split(player.controls.currentPositionString, ":")(0) * 60 + Split(player.controls.currentPositionString, ":")(1)
             Label1.Text = "正在播放 " & player.controls.currentPositionString & " / " & player.currentMedia.durationString
-            Label2.Text = songListArray(currentId, 1)
-            Label3.Text = songListArray(currentId, 3)
-            Label4.Text = songListArray(currentId, 4)
         End If
     End Sub
 
