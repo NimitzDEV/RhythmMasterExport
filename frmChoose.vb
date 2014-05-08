@@ -30,15 +30,9 @@
             lv.SubItems.Add(songListArray(cot, 5) & " 秒") '持续时间
             lv.SubItems.Add(songListArray(cot, 6)) 'BPM
             '难度
-            lv.SubItems.Add("Lv." & songListArray(cot, 7) & " " & Split(songListArray(cot, 16), ",")(0)) '4KE
-            lv.SubItems.Add("Lv." & songListArray(cot, 8) & " " & Split(songListArray(cot, 16), ",")(1)) '4KN
-            lv.SubItems.Add("Lv." & songListArray(cot, 9) & " " & Split(songListArray(cot, 16), ",")(2)) '4KH
-            lv.SubItems.Add("Lv." & songListArray(cot, 10) & " " & Split(songListArray(cot, 16), ",")(3)) '5KE
-            lv.SubItems.Add("Lv." & songListArray(cot, 11) & " " & Split(songListArray(cot, 16), ",")(4)) '5KN
-            lv.SubItems.Add("Lv." & songListArray(cot, 12) & " " & Split(songListArray(cot, 16), ",")(5)) '5KH
-            lv.SubItems.Add("Lv." & songListArray(cot, 13) & " " & Split(songListArray(cot, 16), ",")(6)) '6KE
-            lv.SubItems.Add("Lv." & songListArray(cot, 14) & " " & Split(songListArray(cot, 16), ",")(7)) '6KN
-            lv.SubItems.Add("Lv." & songListArray(cot, 15) & " " & Split(songListArray(cot, 16), ",")(8)) '6KH
+            For addNoteNumber = 0 To 8
+                lv.SubItems.Add("Lv." & songListArray(cot, 7 + addNoteNumber) & " " & Split(songListArray(cot, 16), ",")(addNoteNumber))
+            Next
             '性质
             If songListArray(cot, 20) = "0x1" Then buildStr &= "免费;"
             If songListArray(cot, 17) = "0x1" Then buildStr &= "隐藏;"

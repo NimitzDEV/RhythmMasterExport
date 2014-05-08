@@ -33,6 +33,8 @@
         For clear = 0 To counts
             If songListArray(clear, 3) = "" Then songListArray(clear, 3) = "未知艺术家"
             If songListArray(clear, 4) = "" Then songListArray(clear, 4) = "未知作曲家"
+            songListArray(clear, 16) = Replace(songListArray(clear, 16), ".", ",")
+            If songListArray(clear, 16) = "" Then songListArray(clear, 16) = "0,0,0,0,0,0,0,0,0"
         Next
     End Sub
     Private Function returnNodeName(ByVal nodeNumber As Integer) As String
