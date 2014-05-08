@@ -1,4 +1,5 @@
 ﻿Module main
+    Public Const githubLink As String = "https://github.com/NimitzDEV/RhythmMasterExport"
     Public targetPath As String = "RM\res\song"
     Public targetFile As String = "RM\res\mrock_song_client_android.xml"
     Public finalFilePath As String
