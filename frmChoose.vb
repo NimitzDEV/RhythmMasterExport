@@ -52,7 +52,7 @@
         player.URL = (finalTargetPath & "\" & songPath & "\" & songPath & ".mp3")
         player.controls.play()
         If Dir(finalTargetPath & "\" & songPath & "\" & songPath & ".mp3") = "" Then
-            MsgBox("该歌曲没有下载")
+            MsgBox("该歌曲没有下载" & vbCrLf & "通过新版本的节奏大师中的 设置->下载歌曲 选项下载剩余的歌曲")
             Exit Sub
         End If
         If Dir(finalTargetPath & "\" & songPath & "\" & songPath & ".png") <> "" Then
