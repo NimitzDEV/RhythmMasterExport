@@ -16,17 +16,9 @@
             lv.SubItems(0).Text = songListArray(cot, 0) 'ID
             lv.SubItems.Add(songListArray(cot, 1)) '歌曲名
             '艺术家
-            If songListArray(cot, 3) = "" Then
-                lv.SubItems.Add("未知")
-            Else
-                lv.SubItems.Add(songListArray(cot, 3))
-            End If
+            lv.SubItems.Add(songListArray(cot, 3))
             '作曲家
-            If songListArray(cot, 4) = "" Then
-                lv.SubItems.Add("未知")
-            Else
-                lv.SubItems.Add(songListArray(cot, 4))
-            End If
+            lv.SubItems.Add(songListArray(cot, 4))
             lv.SubItems.Add(songListArray(cot, 5) & " 秒") '持续时间
             lv.SubItems.Add(songListArray(cot, 6)) 'BPM
             '难度
