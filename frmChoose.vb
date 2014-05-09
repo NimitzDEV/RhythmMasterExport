@@ -38,6 +38,7 @@
             If buildStr = "" Then buildStr = "未知"
             lv.SubItems.Add(buildStr) '性质
             '完成添加
+            lv.EnsureVisible()
             ListView1.Items.Add(lv)
             buildStr = ""
         Next
@@ -182,5 +183,9 @@
 
     Private Sub tsmiExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmiExit.Click
         Me.Close()
+    End Sub
+
+    Private Sub tsmiSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmiSearch.Click
+        frmSearch.Show(Me)
     End Sub
 End Class

@@ -52,32 +52,37 @@ Partial Class frmChoose
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.pbSmall = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TrackBar1 = New System.Windows.Forms.TrackBar()
         Me.checker = New System.Windows.Forms.Timer(Me.components)
-        Me.artPic = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.操作ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiReset = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.关于ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiAbout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.工具ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiSearch = New System.Windows.Forms.ToolStripMenuItem()
+        Me.特定条件筛选ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.pbSmall = New System.Windows.Forms.PictureBox()
+        Me.artPic = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.pbSmall, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.artPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.pbSmall, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.artPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ListView1
         '
+        Me.ListView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9, Me.ColumnHeader10, Me.ColumnHeader11, Me.ColumnHeader12, Me.ColumnHeader13, Me.ColumnHeader14, Me.ColumnHeader15, Me.ColumnHeader16, Me.性质})
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
         Me.ListView1.Location = New System.Drawing.Point(0, 326)
+        Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(1074, 480)
         Me.ListView1.TabIndex = 0
@@ -293,15 +298,6 @@ Partial Class frmChoose
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "歌曲名"
         '
-        'pbSmall
-        '
-        Me.pbSmall.Image = Global.节奏大师歌曲导出.My.Resources.Resources.initTitle
-        Me.pbSmall.Location = New System.Drawing.Point(17, 20)
-        Me.pbSmall.Name = "pbSmall"
-        Me.pbSmall.Size = New System.Drawing.Size(140, 60)
-        Me.pbSmall.TabIndex = 3
-        Me.pbSmall.TabStop = False
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(301, 291)
@@ -332,24 +328,15 @@ Partial Class frmChoose
         Me.checker.Enabled = True
         Me.checker.Interval = 1000
         '
-        'artPic
-        '
-        Me.artPic.Image = Global.节奏大师歌曲导出.My.Resources.Resources.initBig
-        Me.artPic.Location = New System.Drawing.Point(0, 0)
-        Me.artPic.Name = "artPic"
-        Me.artPic.Size = New System.Drawing.Size(483, 320)
-        Me.artPic.TabIndex = 1
-        Me.artPic.TabStop = False
-        '
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.Control
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.None
         Me.MenuStrip1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.操作ToolStripMenuItem, Me.关于ToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.操作ToolStripMenuItem, Me.工具ToolStripMenuItem, Me.关于ToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(9, 9)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(94, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(229, 24)
         Me.MenuStrip1.TabIndex = 3
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -363,13 +350,13 @@ Partial Class frmChoose
         'tsmiReset
         '
         Me.tsmiReset.Name = "tsmiReset"
-        Me.tsmiReset.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiReset.Size = New System.Drawing.Size(122, 22)
         Me.tsmiReset.Text = "重新载入"
         '
         'tsmiExit
         '
         Me.tsmiExit.Name = "tsmiExit"
-        Me.tsmiExit.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiExit.Size = New System.Drawing.Size(122, 22)
         Me.tsmiExit.Text = "退出"
         '
         '关于ToolStripMenuItem
@@ -384,6 +371,43 @@ Partial Class frmChoose
         Me.tsmiAbout.Name = "tsmiAbout"
         Me.tsmiAbout.Size = New System.Drawing.Size(107, 22)
         Me.tsmiAbout.Text = "关于..."
+        '
+        '工具ToolStripMenuItem
+        '
+        Me.工具ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiSearch, Me.特定条件筛选ToolStripMenuItem})
+        Me.工具ToolStripMenuItem.Name = "工具ToolStripMenuItem"
+        Me.工具ToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
+        Me.工具ToolStripMenuItem.Text = "工具"
+        '
+        'tsmiSearch
+        '
+        Me.tsmiSearch.Name = "tsmiSearch"
+        Me.tsmiSearch.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiSearch.Text = "关键字搜索"
+        '
+        '特定条件筛选ToolStripMenuItem
+        '
+        Me.特定条件筛选ToolStripMenuItem.Name = "特定条件筛选ToolStripMenuItem"
+        Me.特定条件筛选ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.特定条件筛选ToolStripMenuItem.Text = "特定条件筛选"
+        '
+        'pbSmall
+        '
+        Me.pbSmall.Image = Global.节奏大师歌曲导出.My.Resources.Resources.initTitle
+        Me.pbSmall.Location = New System.Drawing.Point(17, 20)
+        Me.pbSmall.Name = "pbSmall"
+        Me.pbSmall.Size = New System.Drawing.Size(140, 60)
+        Me.pbSmall.TabIndex = 3
+        Me.pbSmall.TabStop = False
+        '
+        'artPic
+        '
+        Me.artPic.Image = Global.节奏大师歌曲导出.My.Resources.Resources.initBig
+        Me.artPic.Location = New System.Drawing.Point(0, 0)
+        Me.artPic.Name = "artPic"
+        Me.artPic.Size = New System.Drawing.Size(483, 320)
+        Me.artPic.TabIndex = 1
+        Me.artPic.TabStop = False
         '
         'frmChoose
         '
@@ -401,11 +425,11 @@ Partial Class frmChoose
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.pbSmall, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.artPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.pbSmall, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.artPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -451,4 +475,7 @@ Partial Class frmChoose
     Friend WithEvents tsmiExit As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents 关于ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiAbout As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents 工具ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiSearch As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents 特定条件筛选ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
