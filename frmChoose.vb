@@ -4,12 +4,17 @@
     Public songPath As String
 
     Private Sub frmChoose_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        player.controls.stop()
-        frmMain.Close()
+            player.controls.stop()
+            frmMain.Close()
     End Sub
     Private Sub frmChoose_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         currentId = -1
         Me.Text = frmMain.Text
+        loadList()
+    End Sub
+
+    Private Sub loadList()
+        ListView1.Items.Clear()
         On Error Resume Next
         For cot = 0 To counts
             Dim lv As New ListViewItem()
@@ -157,9 +162,6 @@
         player.controls.stop()
     End Sub
 
-    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
-        frmAbout.Show()
-    End Sub
 
     Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.Checked Then
@@ -167,5 +169,18 @@
         Else
             GroupBox2.Enabled = False
         End If
+    End Sub
+
+    Private Sub tsmiAbout_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmiAbout.Click
+        frmAbout.ShowDialog()
+    End Sub
+
+    Private Sub tsmiReset_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmiReset.Click
+        loadSongsInfo()
+        loadList()
+    End Sub
+
+    Private Sub tsmiExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmiExit.Click
+        Me.Close()
     End Sub
 End Class

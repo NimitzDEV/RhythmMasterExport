@@ -41,29 +41,35 @@ Partial Class frmChoose
         Me.ColumnHeader16 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.性质 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.pbSmall = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TrackBar1 = New System.Windows.Forms.TrackBar()
         Me.checker = New System.Windows.Forms.Timer(Me.components)
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.pbSmall = New System.Windows.Forms.PictureBox()
         Me.artPic = New System.Windows.Forms.PictureBox()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.操作ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiReset = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiExit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.关于ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiAbout = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbSmall, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.artPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.pbSmall, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.artPic, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ListView1
@@ -160,7 +166,6 @@ Partial Class frmChoose
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
-        Me.GroupBox1.Controls.Add(Me.Button5)
         Me.GroupBox1.Controls.Add(Me.Button4)
         Me.GroupBox1.Controls.Add(Me.CheckBox1)
         Me.GroupBox1.Controls.Add(Me.Button3)
@@ -178,6 +183,88 @@ Partial Class frmChoose
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Player"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.RadioButton3)
+        Me.GroupBox2.Controls.Add(Me.RadioButton2)
+        Me.GroupBox2.Controls.Add(Me.RadioButton1)
+        Me.GroupBox2.Enabled = False
+        Me.GroupBox2.Location = New System.Drawing.Point(228, 173)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(96, 87)
+        Me.GroupBox2.TabIndex = 11
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "播放控制"
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(6, 64)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(71, 16)
+        Me.RadioButton3.TabIndex = 3
+        Me.RadioButton3.Text = "全部循环"
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(6, 42)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(71, 16)
+        Me.RadioButton2.TabIndex = 2
+        Me.RadioButton2.Text = "单曲循环"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Checked = True
+        Me.RadioButton1.Location = New System.Drawing.Point(6, 20)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(71, 16)
+        Me.RadioButton1.TabIndex = 1
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "顺序播放"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(17, 147)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(48, 23)
+        Me.Button4.TabIndex = 9
+        Me.Button4.Text = "播放"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(228, 151)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(96, 16)
+        Me.CheckBox1.TabIndex = 0
+        Me.CheckBox1.Text = "启用播放控制"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(125, 147)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(48, 23)
+        Me.Button3.TabIndex = 8
+        Me.Button3.Text = "停止"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(71, 147)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(48, 23)
+        Me.Button2.TabIndex = 7
+        Me.Button2.Text = "暂停"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -205,6 +292,15 @@ Partial Class frmChoose
         Me.Label2.Size = New System.Drawing.Size(41, 12)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "歌曲名"
+        '
+        'pbSmall
+        '
+        Me.pbSmall.Image = Global.节奏大师歌曲导出.My.Resources.Resources.initTitle
+        Me.pbSmall.Location = New System.Drawing.Point(17, 20)
+        Me.pbSmall.Name = "pbSmall"
+        Me.pbSmall.Size = New System.Drawing.Size(140, 60)
+        Me.pbSmall.TabIndex = 3
+        Me.pbSmall.TabStop = False
         '
         'Button1
         '
@@ -236,42 +332,6 @@ Partial Class frmChoose
         Me.checker.Enabled = True
         Me.checker.Interval = 1000
         '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(71, 147)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(48, 23)
-        Me.Button2.TabIndex = 7
-        Me.Button2.Text = "暂停"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(125, 147)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(48, 23)
-        Me.Button3.TabIndex = 8
-        Me.Button3.Text = "停止"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(17, 147)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(48, 23)
-        Me.Button4.TabIndex = 9
-        Me.Button4.Text = "播放"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'pbSmall
-        '
-        Me.pbSmall.Image = Global.节奏大师歌曲导出.My.Resources.Resources.initTitle
-        Me.pbSmall.Location = New System.Drawing.Point(17, 20)
-        Me.pbSmall.Name = "pbSmall"
-        Me.pbSmall.Size = New System.Drawing.Size(140, 60)
-        Me.pbSmall.TabIndex = 3
-        Me.pbSmall.TabStop = False
-        '
         'artPic
         '
         Me.artPic.Image = Global.节奏大师歌曲导出.My.Resources.Resources.initBig
@@ -281,75 +341,56 @@ Partial Class frmChoose
         Me.artPic.TabIndex = 1
         Me.artPic.TabStop = False
         '
-        'Button5
+        'MenuStrip1
         '
-        Me.Button5.Location = New System.Drawing.Point(17, 291)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 23)
-        Me.Button5.TabIndex = 10
-        Me.Button5.Text = "关于"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.Control
+        Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.None
+        Me.MenuStrip1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.操作ToolStripMenuItem, Me.关于ToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(9, 9)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(94, 24)
+        Me.MenuStrip1.TabIndex = 3
+        Me.MenuStrip1.Text = "MenuStrip1"
         '
-        'GroupBox2
+        '操作ToolStripMenuItem
         '
-        Me.GroupBox2.Controls.Add(Me.RadioButton3)
-        Me.GroupBox2.Controls.Add(Me.RadioButton2)
-        Me.GroupBox2.Controls.Add(Me.RadioButton1)
-        Me.GroupBox2.Enabled = False
-        Me.GroupBox2.Location = New System.Drawing.Point(228, 173)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(96, 87)
-        Me.GroupBox2.TabIndex = 11
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "播放控制"
+        Me.操作ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiReset, Me.tsmiExit})
+        Me.操作ToolStripMenuItem.Name = "操作ToolStripMenuItem"
+        Me.操作ToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
+        Me.操作ToolStripMenuItem.Text = "操作"
         '
-        'CheckBox1
+        'tsmiReset
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(228, 151)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(96, 16)
-        Me.CheckBox1.TabIndex = 0
-        Me.CheckBox1.Text = "启用播放控制"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.tsmiReset.Name = "tsmiReset"
+        Me.tsmiReset.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiReset.Text = "重新载入"
         '
-        'RadioButton1
+        'tsmiExit
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Checked = True
-        Me.RadioButton1.Location = New System.Drawing.Point(6, 20)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(71, 16)
-        Me.RadioButton1.TabIndex = 1
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "顺序播放"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.tsmiExit.Name = "tsmiExit"
+        Me.tsmiExit.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiExit.Text = "退出"
         '
-        'RadioButton2
+        '关于ToolStripMenuItem
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(6, 42)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(71, 16)
-        Me.RadioButton2.TabIndex = 2
-        Me.RadioButton2.Text = "单曲循环"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.关于ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiAbout})
+        Me.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem"
+        Me.关于ToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
+        Me.关于ToolStripMenuItem.Text = "关于"
         '
-        'RadioButton3
+        'tsmiAbout
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(6, 64)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(71, 16)
-        Me.RadioButton3.TabIndex = 3
-        Me.RadioButton3.Text = "全部循环"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.tsmiAbout.Name = "tsmiAbout"
+        Me.tsmiAbout.Size = New System.Drawing.Size(107, 22)
+        Me.tsmiAbout.Text = "关于..."
         '
         'frmChoose
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1127, 735)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.artPic)
         Me.Controls.Add(Me.ListView1)
@@ -358,12 +399,15 @@ Partial Class frmChoose
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbSmall, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.artPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.pbSmall, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.artPic, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents ListView1 As System.Windows.Forms.ListView
@@ -396,10 +440,15 @@ Partial Class frmChoose
     Friend WithEvents Button4 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents RadioButton3 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents 操作ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiReset As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiExit As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents 关于ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiAbout As System.Windows.Forms.ToolStripMenuItem
 End Class
