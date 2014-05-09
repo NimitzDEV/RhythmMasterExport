@@ -75,6 +75,10 @@
         Label3.Text = songListArray(currentId, 3)
         Label4.Text = songListArray(currentId, 4)
         checker.Enabled = True
+        ListView1.Items(currentId).Selected = True
+        ListView1.EnsureVisible(currentId)
+        ListView1.Update()
+        ListView1.Select()
     End Sub
 
     Private Sub frmChoose_Resize(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Resize
