@@ -52,6 +52,7 @@ Partial Class frmChoose
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.pbSmall = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TrackBar1 = New System.Windows.Forms.TrackBar()
@@ -60,18 +61,16 @@ Partial Class frmChoose
         Me.操作ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiReset = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiExit = New System.Windows.Forms.ToolStripMenuItem()
-        Me.关于ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiAbout = New System.Windows.Forms.ToolStripMenuItem()
         Me.工具ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiSearch = New System.Windows.Forms.ToolStripMenuItem()
-        Me.特定条件筛选ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.pbSmall = New System.Windows.Forms.PictureBox()
+        Me.关于ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiAbout = New System.Windows.Forms.ToolStripMenuItem()
         Me.artPic = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.pbSmall, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.pbSmall, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.artPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -299,6 +298,15 @@ Partial Class frmChoose
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "歌曲名"
         '
+        'pbSmall
+        '
+        Me.pbSmall.Image = Global.节奏大师歌曲导出.My.Resources.Resources.initTitle
+        Me.pbSmall.Location = New System.Drawing.Point(17, 20)
+        Me.pbSmall.Name = "pbSmall"
+        Me.pbSmall.Size = New System.Drawing.Size(140, 60)
+        Me.pbSmall.TabIndex = 3
+        Me.pbSmall.TabStop = False
+        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(301, 291)
@@ -360,6 +368,19 @@ Partial Class frmChoose
         Me.tsmiExit.Size = New System.Drawing.Size(122, 22)
         Me.tsmiExit.Text = "退出"
         '
+        '工具ToolStripMenuItem
+        '
+        Me.工具ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiSearch})
+        Me.工具ToolStripMenuItem.Name = "工具ToolStripMenuItem"
+        Me.工具ToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
+        Me.工具ToolStripMenuItem.Text = "工具"
+        '
+        'tsmiSearch
+        '
+        Me.tsmiSearch.Name = "tsmiSearch"
+        Me.tsmiSearch.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiSearch.Text = "关键字搜索"
+        '
         '关于ToolStripMenuItem
         '
         Me.关于ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiAbout})
@@ -372,34 +393,6 @@ Partial Class frmChoose
         Me.tsmiAbout.Name = "tsmiAbout"
         Me.tsmiAbout.Size = New System.Drawing.Size(107, 22)
         Me.tsmiAbout.Text = "关于..."
-        '
-        '工具ToolStripMenuItem
-        '
-        Me.工具ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiSearch, Me.特定条件筛选ToolStripMenuItem})
-        Me.工具ToolStripMenuItem.Name = "工具ToolStripMenuItem"
-        Me.工具ToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
-        Me.工具ToolStripMenuItem.Text = "工具"
-        '
-        'tsmiSearch
-        '
-        Me.tsmiSearch.Name = "tsmiSearch"
-        Me.tsmiSearch.Size = New System.Drawing.Size(152, 22)
-        Me.tsmiSearch.Text = "关键字搜索"
-        '
-        '特定条件筛选ToolStripMenuItem
-        '
-        Me.特定条件筛选ToolStripMenuItem.Name = "特定条件筛选ToolStripMenuItem"
-        Me.特定条件筛选ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.特定条件筛选ToolStripMenuItem.Text = "特定条件筛选"
-        '
-        'pbSmall
-        '
-        Me.pbSmall.Image = Global.节奏大师歌曲导出.My.Resources.Resources.initTitle
-        Me.pbSmall.Location = New System.Drawing.Point(17, 20)
-        Me.pbSmall.Name = "pbSmall"
-        Me.pbSmall.Size = New System.Drawing.Size(140, 60)
-        Me.pbSmall.TabIndex = 3
-        Me.pbSmall.TabStop = False
         '
         'artPic
         '
@@ -426,10 +419,10 @@ Partial Class frmChoose
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.pbSmall, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.pbSmall, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.artPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -478,5 +471,4 @@ Partial Class frmChoose
     Friend WithEvents tsmiAbout As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents 工具ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiSearch As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents 特定条件筛选ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
